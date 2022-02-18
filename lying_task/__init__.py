@@ -16,6 +16,10 @@ wait page timeouts
 
 wait page customization are possible
 
+introduce time limit
+
+define constant for payoff associated with number reported
+
 """
 
 
@@ -34,7 +38,13 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+    roll1 = models.IntegerField(doc='Reported number from die roll 1',
+                                choices=[1, 2, 3, 4, 5, 6])
+    roll2 = models.IntegerField(doc='Reported number from die roll 2',
+                                choices=[1, 2, 3, 4, 5, 6])
+
+    payoff1 = models.IntegerField(doc='Payoff associated with reported number 1')
+    payoff2 = models.IntegerField(doc='Payoff associated with reported number 2')
 
 
 # PAGES
