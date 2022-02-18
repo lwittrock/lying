@@ -3,6 +3,7 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='lying_experiment',
+        display_name='Lying Experiment',
         app_sequence=['intro', 'filler_task', 'instructions', 'lying_task', 'survey'],
         num_demo_participants=4,
     ),
@@ -17,7 +18,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = []
+PARTICIPANT_FIELDS = ['treat']
 SESSION_FIELDS = []
 
 # ISO-639 code
