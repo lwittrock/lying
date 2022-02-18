@@ -27,6 +27,10 @@ class Player(BasePlayer):
 
 
 # PAGES
+class Transition(Page):
+    pass
+
+
 class Instruction(Page):
     pass
 
@@ -39,4 +43,4 @@ class InstructionFeedback(Page):
     pass
 
 
-page_sequence = [Instruction, InstructionTest, InstructionFeedback]
+page_sequence = [Transition, Instruction, InstructionTest, InstructionFeedback]

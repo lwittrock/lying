@@ -33,8 +33,4 @@ class Demographics(Page):
     pass
 
 
-class Transition(Page):
-    pass
-
-
-page_sequence = [Prolific_use, Demographics, Transition]
+page_sequence = [Prolific_use, Demographics]
