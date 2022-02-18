@@ -1,15 +1,16 @@
 from otree.api import *
 
+author = 'Lars Wittrock'
 
 doc = """
-Your app description
+Intro to the study
 """
 
 
-class C(BaseConstants):
-    NAME_IN_URL = 'intro'
-    PLAYERS_PER_GROUP = None
-    NUM_ROUNDS = 1
+class Constants(BaseConstants):
+    name_in_url = 'Intro'
+    players_per_group = None
+    num_rounds = 1
 
 
 class Subsession(BaseSubsession):
@@ -21,20 +22,38 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    pass
+
+    consent = models.BooleanField(
+        widget=widgets.CheckboxInput(),
+        label="I agree.",
+    )
+
+    is_mobile = models.BooleanField(doc="Automatic check through JS whether gadget is phone or not")
+
+    # Error messages
+    @staticmethod
+    def consent_error_message(value):
+        print('value is', value)
+        if value != 1:
+            return 'Your confirmation is required to proceed.'
 
 
 # PAGES
-class MyPage(Page):
-    pass
+
+class Welcome(Page):
+    form_model = 'player'
+    form_fields = ['is_mobile']
 
 
-class ResultsWaitPage(WaitPage):
-    pass
+class SorryNoPhone(Page):
+    @staticmethod
+    def is_displayed(player):
+        return player.is_mobile == 1
 
 
-class Results(Page):
-    pass
+class Consent(Page):
+    form_model = 'player'
+    form_fields = ['consent']
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [Welcome, SorryNoPhone, Consent]
