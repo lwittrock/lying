@@ -68,4 +68,4 @@ class Results2(Page):
     pass
 
 
-page_sequence = [WaitPageStart, Roll1, WaitPage1, Results1, WaitPage2, Roll2, Results2]
+page_sequence = [WaitPageStart, Roll1, WaitPage1, Results1, Roll2, WaitPage2, Results2]
