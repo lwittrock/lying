@@ -8,6 +8,17 @@ Main Lying Task
 """
 
 
+comments = """
+
+group_by_arrival_time, works only if waitpage is first in page sequence. maybe make instructions separate app?
+
+wait page timeouts
+
+wait page customization are possible
+
+"""
+
+
 class C(BaseConstants):
     NAME_IN_URL = 'AdditionalPayoff'
     PLAYERS_PER_GROUP = 2
@@ -27,15 +38,7 @@ class Player(BasePlayer):
 
 
 # PAGES
-class Instruction(Page):
-    pass
-
-
-class InstructionTest(Page):
-    pass
-
-
-class InstructionFeedback(Page):
+class WaitPageStart(WaitPage):
     pass
 
 
@@ -44,7 +47,8 @@ class Roll1(Page):
 
 
 class WaitPage1(WaitPage):
-    pass
+    title_text = "This is a custom wait page title"
+    body_text = "This is a custom body text on the wait page"
 
 
 class Results1(Page):
@@ -56,12 +60,12 @@ class Roll2(Page):
 
 
 class WaitPage2(WaitPage):
-    pass
+    title_text = "This is a custom wait page title"
+    body_text = "This is a custom body text on the wait page"
 
 
 class Results2(Page):
     pass
 
 
-page_sequence = [Instruction, InstructionTest, InstructionFeedback, WaitPage1,
-                 Roll1, Results1, WaitPage2, Roll2, Results2]
+page_sequence = [WaitPageStart, Roll1, WaitPage1, Results1, WaitPage2, Roll2, Results2]

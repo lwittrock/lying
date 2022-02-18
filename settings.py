@@ -3,8 +3,8 @@ from os import environ
 SESSION_CONFIGS = [
     dict(
         name='lying_experiment',
-        app_sequence=['intro', 'filler_task', 'lying_task', 'survey'],
-        num_demo_participants=3,
+        app_sequence=['intro', 'filler_task', 'instructions', 'lying_task', 'survey'],
+        num_demo_participants=4,
     ),
 ]
 

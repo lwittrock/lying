@@ -29,11 +29,11 @@ class Prolific_use(Page):
     pass
 
 
-class Demographics(WaitPage):
+class Demographics(Page):
     pass
 
 
-class Transition(WaitPage):
+class Transition(Page):
     pass
 
 
