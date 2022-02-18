@@ -1,13 +1,14 @@
 from otree.api import *
 
+author = "Lars Wittrock"
 
 doc = """
-Your app description
+Post experiment survey after lying experiment
 """
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'survey'
+    NAME_IN_URL = 'FinalSurvey'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 
@@ -25,16 +26,24 @@ class Player(BasePlayer):
 
 
 # PAGES
-class MyPage(Page):
+class Transition(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
+class Beliefs(Page):
     pass
 
 
-class Results(Page):
+class Likert(Page):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+class Controls(Page):
+    pass
+
+
+class FinalPage(Page):
+    pass
+
+
+page_sequence = [Transition, Beliefs, Likert, Controls, FinalPage]
