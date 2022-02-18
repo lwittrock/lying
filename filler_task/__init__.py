@@ -25,16 +25,16 @@ class Player(BasePlayer):
 
 
 # PAGES
-class MyPage(Page):
+class Prolific_use(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
+class Demographics(WaitPage):
     pass
 
 
-class Results(Page):
+class Transition(WaitPage):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+page_sequence = [Prolific_use, Demographics, Transition]
