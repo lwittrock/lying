@@ -1,14 +1,16 @@
 from otree.api import *
 
 
+author = 'Lars Wittrock'
+
 doc = """
-Your app description
+Main Lying Task
 """
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'lying_task'
-    PLAYERS_PER_GROUP = None
+    NAME_IN_URL = 'AdditionalPayoff'
+    PLAYERS_PER_GROUP = 2
     NUM_ROUNDS = 1
 
 
@@ -25,16 +27,41 @@ class Player(BasePlayer):
 
 
 # PAGES
-class MyPage(Page):
+class Instruction(Page):
     pass
 
 
-class ResultsWaitPage(WaitPage):
+class InstructionTest(Page):
     pass
 
 
-class Results(Page):
+class InstructionFeedback(Page):
     pass
 
 
-page_sequence = [MyPage, ResultsWaitPage, Results]
+class Roll1(Page):
+    pass
+
+
+class WaitPage1(WaitPage):
+    pass
+
+
+class Results1(Page):
+    pass
+
+
+class Roll2(Page):
+    pass
+
+
+class WaitPage2(WaitPage):
+    pass
+
+
+class Results2(Page):
+    pass
+
+
+page_sequence = [Instruction, InstructionTest, InstructionFeedback, WaitPage1,
+                 Roll1, Results1, WaitPage2, Roll2, Results2]

@@ -7,7 +7,7 @@ Your app description
 
 
 class C(BaseConstants):
-    NAME_IN_URL = 'filler_task'
+    NAME_IN_URL = 'ProlificUsage'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
 
